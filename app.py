@@ -1,6 +1,6 @@
 import logging
 import socket
-
+from flask import jsonify
 from routes import app
 
 logger = logging.getLogger(__name__)
