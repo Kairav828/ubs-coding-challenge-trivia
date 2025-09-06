@@ -13,15 +13,15 @@ def default_route():
 @app.route('/trivia', methods=['GET'])
 def trivia():
     answers = [
-        2,
+        3,
         1,
         2,
         2,
         3,
         5,
-        2,
+        4,
         5,
-        3
+        4
     ]
     return jsonify({"answers": answers})
 
