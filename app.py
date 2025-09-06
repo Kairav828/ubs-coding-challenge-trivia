@@ -13,11 +13,11 @@ def default_route():
 @app.route('/trivia', methods=['GET'])
 def trivia():
     answers = [
-        3,
+        2,
         1,
         2,
         2,
-        5,
+        3,
         5,
         4,
         5,
