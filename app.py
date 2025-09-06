@@ -10,6 +10,20 @@ logger = logging.getLogger(__name__)
 def default_route():
     return 'Python Template'
 
+@app.route('/trivia', methods=['GET'])
+def trivia():
+    answers = [
+        2,
+        1,
+        2,
+        2,
+        3,
+        5,
+        4,
+        1,
+        4
+    ]
+    return jsonify({"answers": answers})
 
 logger = logging.getLogger()
 handler = logging.StreamHandler()
@@ -20,9 +34,5 @@ logger.addHandler(handler)
 logger.setLevel(logging.INFO)
 
 if __name__ == "__main__":
-    logging.info("Starting application ...")
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.bind(('localhost', 8080))
-    port = sock.getsockname()[1]
-    sock.close()
-    app.run(port=port)
+    app.run(host='0.0.0.0', port=8000, debug=True)
+
